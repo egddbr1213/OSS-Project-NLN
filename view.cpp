@@ -1,5 +1,5 @@
 #include "view.h"
-
+/*
 void textcolor(int foreground, int background)
 {
 	int color = foreground + background * 16;
@@ -52,4 +52,20 @@ void mainpage(int input = 0) {
 			Sleep(500);
 		}
 	}
+}*/
+
+char* GetNext(char* str, char del, char*buffer)
+{
+	while(*str&&*str!=del)*buffer++=*str++;
+	if(*(buffer-1)=='\n')*(buffer-1)=0;
+	else *buffer=0;
+	if(*str==del)str++;
+
+	return str;
+}
+
+std::string SearchLocation(std::string location)
+{
+	// 현위치 주변에 있는지 없는지 검색하는 함수의 내용을 추가해주세요
+	return location;
 }

@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
-#include <conio.h>
-#include <Windows.h>
+//#include <conio.h>
+//#include <Windows.h>
 
 enum Color
 {
@@ -23,5 +23,8 @@ enum Color
 	WHITE
 };
 
-void textcolor(int, int);
-void mainpage(int);
+//void textcolor(int, int);
+//void mainpage(int);
+
+char* GetNext(char*, char, char*);
+std::string SearchLocation(std::string);
