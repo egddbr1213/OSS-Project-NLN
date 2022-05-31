@@ -3,6 +3,15 @@ using namespace std;
 int main() {
 //	mainpage(0);
 	cout << "판매자 모드" << endl;
+
+	bool logged = LogIn();
+
+	if(logged==false)
+		return 0;
+	else
+		system("cls");
+
+
 	cout << "관리를 시작하시겠습니까?(y/n) >> ";
 	char ans;
 	cin >> ans;
