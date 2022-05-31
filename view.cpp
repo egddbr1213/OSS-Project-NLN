@@ -69,3 +69,49 @@ std::string SearchLocation(std::string location)
 	// 현위치 주변에 있는지 없는지 검색하는 함수의 내용을 추가해주세요
 	return location;
 }
+
+bool LogIn() {
+		std::cout << "사용자 아이디 >> ";
+	bool is_user = false;
+	char* ans_id = (char*)malloc(sizeof(char) * 10);
+	char* ans_pw = (char*)malloc(sizeof(char) * 10);
+	std::cin >> ans_id;
+	fflush(stdin);
+	FILE* fp = NULL;
+	if (0 == fopen_s(&fp, "SellerProfile.csv", "rt")) {
+		char one_line_string[128], str[32], * pos;
+
+		if (NULL != fgets(one_line_string, 128, fp)) {
+			pos = one_line_string;
+			for (int i = 0; *pos; i++) {
+				pos = GetNext(pos, ',', str);
+			}
+		}
+
+		while (NULL != fgets(one_line_string, 128, fp)) {
+			pos = one_line_string;
+			for (int i = 0; *pos; i++) {
+				pos = GetNext(pos, ',', str);
+				if (strcmp(str, ans_id) == 0) {
+					std::cout << "사용자 비밀번호 >> ";
+					std::cin >> ans_pw;
+					pos = GetNext(pos, ',', str);
+					if (strcmp(str, ans_pw) == 0) {
+						is_user = true;
+						break;
+					}
+					else {
+						std::cout << "없는 사용자이거나 비밀번호 입력 오류" << std::endl;
+					}
+				}
+			}
+		}
+		fclose(fp);
+		fp = NULL;
+		free(ans_id);
+		free(ans_pw);
+	}
+
+
+	return is_user;
+}
