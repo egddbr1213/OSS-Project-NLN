@@ -1,7 +1,5 @@
 #pragma once
 #include <iostream>
-//#include <conio.h>
-//#include <Windows.h>
 
 enum Color
 {
@@ -28,4 +26,4 @@ enum Color
 
 char* GetNext(char*, char, char*);
 std::string SearchLocation(std::string);
-bool LogIn();
+bool LogIn(std::string&);
