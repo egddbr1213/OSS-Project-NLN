@@ -27,3 +27,4 @@ enum Color
 char* GetNext(char*, char, char*);
 std::string SearchLocation(std::string);
 bool LogIn(std::string&);
+char* Search(std::string, std::string, std::string, std::string);

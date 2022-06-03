@@ -72,3 +72,40 @@ bool LogIn(std::string& id) {
 
 	return is_user;
 }
+
+char* Search(std::string fileName, std::string category, std::string title, std::string price) {
+	FILE* fp = NULL;
+	if (0 == fopen_s(&fp, fileName.c_str(), "rt")) {
+		char one_line_string[128], str[32], * pos;
+
+		if (NULL != fgets(one_line_string, 128, fp)) {
+			pos = one_line_string;
+			for (int i = 0; *pos; i++) {
+				pos = GetNext(pos, ',', str);
+			}
+		}
+
+		while (NULL != fgets(one_line_string, 128, fp)) {
+			pos = one_line_string;
+			for (int i = 0; *pos; i++) {
+				char* id = str;
+				pos = GetNext(pos, ',', str);
+				if (strcmp(str, category.c_str()) == 0) {
+					pos = GetNext(pos, ',', str);
+					if (strcmp(str, title.c_str()) == 0) {
+						pos = GetNext(pos, ',', str);
+						if (strcmp(str, price.c_str()) == 0) {
+							return id;
+						}				
+					}
+					else {	
+						strcpy(id, "-1");
+						return id;
+					}
+				}
+			}
+		}
+		fclose(fp);
+		fp = NULL;
+	}
+}
