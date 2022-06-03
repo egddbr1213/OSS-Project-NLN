@@ -109,3 +109,52 @@ char* Search(std::string fileName, std::string category, std::string title, std:
 		fp = NULL;
 	}
 }
+
+void InventoryManagement() {
+
+	std::cout << "\n\n" << std::endl;
+
+	std::cout << "1. 입고" << std::endl;
+	std::cout << "2. 출고" << std::endl;
+	int choice;
+	std::cout << "선택 >> ";
+	std::cin >> choice;
+	std::cin.ignore();
+	if (choice == 1) {
+		std::cout << "\n\nwarehousing" << std::endl; // 입고
+
+		std::string category, title, price, amount;
+		char ans;
+		std::cout << "title >> ";
+		getline(std::cin, title);
+		fflush(stdin);
+		std::cout << "category >> ";
+		std::cin >> category;
+		fflush(stdin);
+		std::cout << "price >> ";
+		std::cin >> price;
+		fflush(stdin);
+		std::cout << "amount >> ";
+		std::cin >> amount;
+		fflush(stdin);
+
+		system("cls");
+		std::cout << "category : " << category << std::endl;
+		std::cout << "title : " << title << std::endl;
+		std::cout << "price : " << price << std::endl;
+		std::cout << "amount : " << amount << std::endl;
+		std::cout << "\n맞습니까?(y/n) >> ";
+		std::cin >> ans;
+		if (ans == 'y') { // 파일 뒤지기
+			char* id = Search("dataExample2.csv", category, title, price);
+			if (strcmp(id, "-1") == 0) {
+				std::cout << "make new!";
+			}
+			else {
+				std::cout << "modify the amount of its id";
+			}
+		}
+		else
+			InventoryManagement();
+	}
+}
