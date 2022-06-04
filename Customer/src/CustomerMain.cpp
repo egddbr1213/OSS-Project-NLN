@@ -10,7 +10,7 @@ int main() {
 	string cur_location;
 	cur_location = cur_location_city + ' ' + cur_location_gu;
 	FILE* fp;
-	if (0 == fopen_s(&fp, "dataExample2.csv", "rt")) {
+	if (0 == fopen_s(&fp, "../../documents/dataExample2.csv", "rt")) {
 		cout << "파일이 열렸습니다!!!" << endl;
 		ShowData(fp, cur_location);
 
@@ -27,7 +27,7 @@ int main() {
 		cout << "\n\n책 제목을 입력해주세요 >> ";
 		string title;
 		getline(cin, title);
-		if (0 == fopen_s(&fp, "dataExample2.csv", "rt")) {
+		if (0 == fopen_s(&fp, "../../documents/dataExample2.csv", "rt")) {
 			cout << "파일이 열렸습니다!!!" << endl;
 			ShowData(fp, cur_location, title);
 			fclose(fp);
@@ -54,8 +54,8 @@ int main() {
 			std::string total_str;
 			long find_pos;
 			int before = 0, after = 0;
-			long currLoc = Search(fp, "dataExample2.csv", find_id);
-			if (0 == fopen_s(&fp, "dataExample2.csv", "r+t")) {
+			long currLoc = Search(fp, "../../documents/dataExample2.csv", find_id);
+			if (0 == fopen_s(&fp, "../../documents/dataExample2.csv", "r+t")) {
 				cout << "파일이 열렸습니다!!!" << endl;
 				char one_line_string[128], str[32], * pos;
 				fseek(fp, currLoc, SEEK_SET);
@@ -111,7 +111,7 @@ int main() {
 		cout << "\n\n카테고리를 입력해주세요 >> ";
 		string category;
 		getline(cin, category);
-		if (0 == fopen_s(&fp, "dataExample2.csv", "rt")) {
+		if (0 == fopen_s(&fp, "../../documents/dataExample2.csv", "rt")) {
 			cout << "파일이 열렸습니다!!!" << endl;
 			ShowData(fp, cur_location, category);
 

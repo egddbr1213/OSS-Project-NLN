@@ -120,7 +120,7 @@ void ShowData(FILE* fp, std::string location, std::string another) {
 
 int EditData(FILE* fp, std::string find_id, std::string find_num) {
 	char one_line_string[128], str[32], * pos;
-	if (0 == fopen_s(&fp, "dataExample2.csv", "rt")) {
+	if (0 == fopen_s(&fp, "../../documents/dataExample2.csv", "rt")) {
 		std::cout << "파일이 열렸습니다!!!" << std::endl;
 		if (NULL != fgets(one_line_string, 128, fp)) {
 			pos = one_line_string;
