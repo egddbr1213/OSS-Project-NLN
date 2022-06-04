@@ -5,6 +5,14 @@
 
 ## 사용 가이드 (수정 필요)
 
+## 설치방법
+You can use it by just cloning it
+
+## 의존성
+Got functions from https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=tipsware&logNo=221680584661 and used it our way
+
+## 실행 방법
+Clicking the exe file will be enough
 
 ## 기능
  - 재고 관리
@@ -12,6 +20,8 @@
 
 ## 컨벤션 (수정 필요)
 
+## 라이선스
+- MIT License
 
 ## 팀원
 
@@ -20,4 +30,4 @@
 | 남동욱 | 임경택 | Namoz MamadKarimov |
 
 ## 프로젝트 기간
-Project : 2022/03/16 ~ 2022/07/31
+Project : 2022/03/16 ~ 2022/06/04
