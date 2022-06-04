@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <sstream>
 
 enum Color
 {
@@ -28,5 +29,9 @@ enum Color
 char* GetNext(char*, char, char*);
 std::string SearchLocation(std::string);
 bool LogIn(std::string&);
-char* Search(std::string, std::string, std::string, std::string);
-void InventoryManagement();
+std::string Search(std::string, std::string, std::string, std::string);
+long Search(FILE*, std::string, std::string);
+void InventoryManagement(std::string);
+void InventoryManagement(std::string, int);
+void ShowData(FILE*, std::string, std::string, std::string);
+
